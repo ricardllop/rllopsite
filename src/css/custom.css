@@ -56,7 +56,17 @@
   
 }
 
+.badgeimage {
+  height: 150px;
+  width: 150px;
+}
+
 .contrastWithBackground{
   color: var(--ifm-color-contrast-back)
 
+}
+.containertwo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

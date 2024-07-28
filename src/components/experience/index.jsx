@@ -28,6 +28,7 @@ function Experience() {
       - Terraform modules for infrastructure needs.<br/>
       - CI/CD pipeline and release model. Jenkins + ArgoCD<br/>
       - Quality and DevSecOps process in the model<br/>
+      - On call support for the platform<br/>
     </p>
   </VerticalTimelineElement>
   <VerticalTimelineElement

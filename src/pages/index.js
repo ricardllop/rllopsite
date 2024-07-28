@@ -15,9 +15,14 @@ function HomepageHeader() {
       <div className="container">
         <div className="row">
           <div className={clsx('col')}>
+          <div class="containertwo">
+              <a href="https://www.credly.com/badges/2f3052e2-1aaa-4b3e-a57a-07175f0940a2"><img src="img/aws-devopsprofesional-badge.png" alt="aws devops profesional badge" className="badgeimage"/></a>
+              <a href="https://www.credly.com/badges/88399933-17d6-41e2-985c-828798f30f6f"><img src="img/ckad-badge.png" alt="ckad badge" className="badgeimage"/></a>
+              <a href="https://www.credly.com/badges/45eb9b34-fe37-45f8-9f45-0808b9de9cb9"><img src="img/aws-developer-badge.png" alt="aws developer associate badge" className="badgeimage"/></a>
+              </div>
             <div class="descriptiontext">
               <h2>Hello, I am Ricard</h2>
-              <h1 >DEVOPS ENGINEER</h1>
+                <h1>DEVOPS ENGINEER</h1> 
               <p class="pmid">
                 {`DevOps and Infrastructure as Code specialist with expertise in Terraform, AWS, Kubernetes, and Docker. Proficient in designing and deploying scalable, reliable cloud architectures using Terraform, ArgoCD, and Helm.`}
               </p>
