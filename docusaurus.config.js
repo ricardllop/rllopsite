@@ -2,15 +2,16 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'RLlop Site',
+  title: 'RLlopSite',
   tagline: 'Devops Engineer',
   favicon: 'img/favicon.ico',
 
   // TO DO Set the production url of your site here
-  url: 'http://ricardllop.github.io',
+  url: 'https://ricardllop.github.io',
   baseUrl: '/rllopsite/',
   organizationName: 'ricardllop',
   projectName: 'rllopsite',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
