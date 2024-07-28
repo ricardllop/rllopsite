@@ -7,7 +7,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // TO DO Set the production url of your site here
-  url: 'http://ricardllop.github.io/rllopsite',
+  url: 'https://ricardllop.github.io/rllopsite',
   baseUrl: '/',
   organizationName: 'ricardllop',
   projectName: 'rllopsite',
