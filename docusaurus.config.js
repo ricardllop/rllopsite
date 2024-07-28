@@ -8,7 +8,7 @@ const config = {
 
   // TO DO Set the production url of your site here
   url: 'http://ricardllop.github.io',
-  baseUrl: '/rllopsite',
+  baseUrl: '/rllopsite/',
   organizationName: 'ricardllop',
   projectName: 'rllopsite',
 
