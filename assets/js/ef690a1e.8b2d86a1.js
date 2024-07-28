@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrllopsite=self.webpackChunkrllopsite||[]).push([[42],{6774:l=>{l.exports=JSON.parse('{"tags":[{"label":"DevOps","permalink":"/rllopsite/blog/tags/dev-ops","count":1},{"label":"Terraform","permalink":"/rllopsite/blog/tags/terraform","count":1},{"label":"cloud","permalink":"/rllopsite/blog/tags/cloud","count":1}]}')}}]);
