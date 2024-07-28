@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>RLlop Site Blog</title>
-        <link>http://ricardllop.github.io/rllopsite/blog</link>
-        <description>RLlop Site Blog</description>
+        <title>RLlopSite Blog</title>
+        <link>https://ricardllop.github.io/rllopsite/blog</link>
+        <description>RLlopSite Blog</description>
         <lastBuildDate>Mon, 20 May 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
             <title><![CDATA[Project1]]></title>
-            <link>http://ricardllop.github.io/rllopsite/blog/Project1</link>
-            <guid>http://ricardllop.github.io/rllopsite/blog/Project1</guid>
+            <link>https://ricardllop.github.io/rllopsite/blog/Project1</link>
+            <guid>https://ricardllop.github.io/rllopsite/blog/Project1</guid>
             <pubDate>Mon, 20 May 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[TO DO]]></description>
-            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="to-do">TO DO<a href="http://ricardllop.github.io/rllopsite/blog/Project1#to-do" class="hash-link" aria-label="Direct link to TO DO" title="Direct link to TO DO">​</a></h3>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="to-do">TO DO<a href="https://ricardllop.github.io/rllopsite/blog/Project1#to-do" class="hash-link" aria-label="Direct link to TO DO" title="Direct link to TO DO">​</a></h3>
 <p>Placholder for <code>personal project 1</code>.</p>]]></content:encoded>
             <category>DevOps</category>
             <category>Terraform</category>
