@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://ricardllop.github.io/blog</id>
+    <title>RLlop Site Blog</title>
+    <updated>2024-05-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://ricardllop.github.io/blog"/>
+    <subtitle>RLlop Site Blog</subtitle>
+    <icon>http://ricardllop.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Project1]]></title>
+        <id>http://ricardllop.github.io/blog/Project1</id>
+        <link href="http://ricardllop.github.io/blog/Project1"/>
+        <updated>2024-05-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[TO DO]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="to-do">TO DO<a href="http://ricardllop.github.io/blog/Project1#to-do" class="hash-link" aria-label="Direct link to TO DO" title="Direct link to TO DO">​</a></h3>
+<p>Placholder for <code>personal project 1</code>.</p>]]></content>
+        <author>
+            <name>Ricard Llop</name>
+            <uri>https://github.com/ricardllop</uri>
+        </author>
+        <category label="DevOps" term="DevOps"/>
+        <category label="Terraform" term="Terraform"/>
+        <category label="cloud" term="cloud"/>
+    </entry>
+</feed>

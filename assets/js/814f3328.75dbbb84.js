@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrllopsite=self.webpackChunkrllopsite||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Project1","permalink":"/blog/Project1","unlisted":false}]}')}}]);
