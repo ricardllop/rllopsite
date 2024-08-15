@@ -24,13 +24,13 @@ function HomepageHeader() {
               <h2>Hello, I am Ricard</h2>
                 <h1>DEVOPS ENGINEER</h1> 
               <p class="pmid">
-                {`DevOps and Infrastructure as Code specialist with expertise in Terraform, AWS, Kubernetes, and Docker. Proficient in designing and deploying scalable, reliable cloud architectures using Terraform, ArgoCD, and Helm.`}
+                {`DevOps and Infrastructure as Code specialist with expertise in AWS. Skilled in using Terraform, Kubernetes, Helm and docker. Proficient in designing and deploying scalable, reliable cloud architectures and developer platforms using the Cloud`}
               </p>
               <p class="pmid">
-                {`Skilled in Bash scripting, and CI/CD tools like Jenkins and Git. Adept at integrating code quality tools such as SonarQube & Trivy.`}
+                {`Skilled in Bash scripting, and CI/CD flows using tools like Jenkins and ArgoCD. Adept at integrating code quality tools such as SonarQube & Trivy.`}
               </p>
               <p>
-                {`Proven ability to collaborate across teams, driving efficiency and innovation in deployment pipelines. Committed to continuous improvement and staying current with emerging technologies`}
+                {`Proven ability to collaborate across teams, driving efficiency and innovation in the software delivery life cycle. Committed to continuous improvement and staying current with emerging technologies`}
               </p>
             </div>
           </div>
