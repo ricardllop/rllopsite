@@ -1,0 +1,64 @@
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import Experience from "@site/src/components/experience";
+import Heading from '@theme/Heading';
+import styles from './index.module.css';
+
+function HomepageHeader() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        <div className="row">
+          <div className={clsx('col')}>
+          <div class="containertwo">
+              <a href="https://www.credly.com/badges/2f3052e2-1aaa-4b3e-a57a-07175f0940a2"><img src="img/aws-devopsprofesional-badge.png" alt="aws devops profesional badge" className="badgeimage"/></a>
+              <a href="https://www.credly.com/badges/88399933-17d6-41e2-985c-828798f30f6f"><img src="img/ckad-badge.png" alt="ckad badge" className="badgeimage"/></a>
+              <a href="https://www.credly.com/badges/45eb9b34-fe37-45f8-9f45-0808b9de9cb9"><img src="img/aws-developer-badge.png" alt="aws developer associate badge" className="badgeimage"/></a>
+              </div>
+            <div class="descriptiontext">
+              <h2>Hello, I am Ricard</h2>
+              <h1>DEVOPS ENGINEER</h1> 
+              <p class="pmid">
+                {`DevOps and Infrastructure as Code specialist with expertise in AWS. Skilled in using Terraform, Kubernetes, Helm and docker. Proficient in designing and deploying scalable, reliable cloud architectures and developer platforms using the Cloud.`}
+              </p>
+              <p class="pmid">
+                {`Skilled in Bash scripting, and CI/CD flows using tools like Jenkins and ArgoCD. Adept at integrating code quality tools such as SonarQube & Trivy.`}
+              </p>
+              <p>
+                {`Proven ability to collaborate across teams, driving efficiency and innovation in the software delivery life cycle. Committed to continuous improvement and staying current with emerging technologies.`}
+              </p>
+            </div>
+          </div>
+          <div className={clsx('col', 'profileimg-container')}>
+            <img src="img/sitelogo.png" alt="Photo of me (Ricard)" className="profileimg" />
+            <div className="link-text">
+              <a href="/docs/intro" className={styles.coolLink}>
+                Learn how I applied my knowledge to this site
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+  );
+}
+
+export default function Home() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <Layout
+      title={`${siteConfig.title}`}
+      description="Ricard Llop">
+      <HomepageHeader />
+      <main>
+        <Experience />
+        
+      </main>
+    </Layout>
+  );
+}

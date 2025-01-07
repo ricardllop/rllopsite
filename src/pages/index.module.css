@@ -1,0 +1,48 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+  .profileimg-container {
+    margin-top: 10px;
+  }
+  .coolLink {
+    font-size: srem;
+    padding: 8px px;
+  }
+}
+.link-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.coolLink {
+  font-size: 1.4rem;
+  color: var(--ifm-color-primary-dark); /* Theme contrast color */
+  text-decoration: none;
+  background-color: var(--ifm-color-primary-lightest); /* Primary theme color */
+  padding: 10px 10px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.coolLink:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-primary-lightest);
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
