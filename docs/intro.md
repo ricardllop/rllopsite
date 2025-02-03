@@ -12,6 +12,8 @@ What is perhaps more interesting is the **site's hosting and CI/CD pipeline**, t
 
 The setup includes an **always free Kubernetes cluster** using [Oracle Cloud](https://www.oracle.com/es/cloud/), **Containerization** of the website, **CI/CD using GitHub Actions**, **CD using [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)** and **Helm**. So keep reading if you are interested.
 
+![Schema](./rllopsite-schema.png)
+
 ## The webpage
 
 The site is stored in this [Github repository](https://github.com/ricardllop/rllopsite), it is created using [Docusaurus](https://docusaurus.io/docs), a React-based static-site generator for fast, interactive sites, ideal for documentation, blogs, or personal projects.
