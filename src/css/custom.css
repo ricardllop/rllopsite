@@ -4,6 +4,8 @@
  * work well for content-centric websites.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #6699cc;
@@ -30,49 +32,73 @@
   --ifm-color-contrast-back: #d3c0b9;
   --docusaurus-highlighted-code-line-bg: rgb(255, 255, 255);
 }
-.descriptiontext{
+
+.descriptiontext {
   color: white;
   text-align: left;
-  font-size: 20px;
-  line-height: 35px;  
-  display: block;
-  align-items: center;
-  justify-content: center;
+  font-size: 18px;
+  line-height: 32px;
 }
 
-
 .pmid {
-  margin-bottom: 50px; /* between paragraphs */
+  margin-bottom: 40px;
 }
 
 .profileimg-container {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .profileimg {
   height: auto;
-  max-width: 100%;
-  margin: 0 auto;
-  transform: translateY(0); /* Resetting unnecessary translation */
-  margin-bottom: 40px
+  max-width: 260px;
+  border-radius: 50%;
+  border: 3px solid rgba(102, 153, 204, 0.55);
+  box-shadow:
+    0 0 0 6px rgba(102, 153, 204, 0.1),
+    0 0 30px rgba(102, 153, 204, 0.35),
+    0 0 60px rgba(102, 153, 204, 0.15);
+  animation: float 5s ease-in-out infinite;
+  margin-bottom: 40px;
 }
 
+[data-theme='dark'] .profileimg {
+  border-color: rgba(145, 116, 106, 0.55);
+  box-shadow:
+    0 0 0 6px rgba(145, 116, 106, 0.1),
+    0 0 30px rgba(145, 116, 106, 0.35),
+    0 0 60px rgba(145, 116, 106, 0.15);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
 
 .badgeimage {
   height: auto;
   width: 150px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
 }
 
-.contrastWithBackground{
-  color: var(--ifm-color-contrast-back)
+.badgeimage:hover {
+  transform: translateY(-6px) scale(1.08);
+  filter: drop-shadow(0 8px 16px rgba(102, 153, 204, 0.55));
+}
 
+.contrastWithBackground {
+  color: var(--ifm-color-contrast-back) !important;
 }
-.containertwo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/* On mobile the timeline date moves inside the content box (light bg),
+   so it must be dark regardless of theme to stay readable. */
+@media only screen and (max-width: 1169px) {
+  .contrastWithBackground {
+    color: var(--ifm-color-primary-dark) !important;
+  }
 }
+

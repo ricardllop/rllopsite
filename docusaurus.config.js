@@ -18,7 +18,11 @@ const config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'es'],
+    localeConfigs: {
+      en: { label: 'English' },
+      es: { label: 'Español' },
+    },
   },
 
   presets: [
@@ -47,6 +51,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/devops.png',
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
       navbar: {
         title: 'Me',
         logo: {
@@ -58,12 +65,16 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'How is this hosted',
+            label: 'Infrastructure behind this site',
           },
           {to: '/blog', label: 'Portfolio', position: 'left'},
           {
             href: 'https://github.com/ricardllop',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            type: 'localeDropdown',
             position: 'right',
           },
         ],
@@ -76,7 +87,7 @@ const config = {
             items: [
               {
                 label: 'How is this hosted',
-                to: '/docs/intro',
+                to: '/docs/site-infrastructure',
               },
               {
                 label: 'Portfolio',
