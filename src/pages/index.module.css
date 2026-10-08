@@ -200,6 +200,41 @@
   border-radius: 2px;
 }
 
+/* ── Contact links (row above the resume button) ─────────── */
+.contactRow {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 340px;
+  margin-bottom: 10px;
+}
+
+.contactLink {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 6px;
+  background: rgba(102, 153, 204, 0.1);
+  border: 1px solid rgba(102, 153, 204, 0.35);
+  border-radius: 8px;
+  color: rgba(153, 204, 255, 0.9);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+}
+
+.contactLink:hover {
+  background: rgba(102, 153, 204, 0.2);
+  border-color: rgba(102, 153, 204, 0.65);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
 /* ── Resume download button ──────────────────────────────── */
 .resumeButton {
   display: flex;
@@ -232,6 +267,26 @@
   height: 16px;
   fill: currentColor;
   flex-shrink: 0;
+}
+
+/* Secondary link to the plain (ATS) resume */
+.plainResumeLink {
+  width: 100%;
+  max-width: 340px;
+  margin: -4px 0 12px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: rgba(153, 204, 255, 0.7);
+  font-size: 0.72rem;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.22s ease;
+}
+
+.plainResumeLink:hover {
+  color: #ffffff;
 }
 
 /* ── Terminal / Infra CTA card ───────────────────────────── */
@@ -411,6 +466,19 @@
   font-size: 0.62rem;
 }
 
+/* Image currently deployed (tag injected at build time) */
+.deployedImage {
+  margin-bottom: 11px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.deployedImageLabel {
+  margin-right: 7px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
 /* Tech pills */
 .techRow {
   display: flex;
@@ -527,10 +595,88 @@
   border-color: rgba(145, 116, 106, 0.35);
 }
 
+/* Achievements: bold label + bullet list below the description */
+.achieved {
+  margin-top: 10px;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.achievedLabel {
+  font-weight: 800;
+}
+
+.achievedList {
+  margin: 2px 0 0;
+  padding-left: 1.2rem;
+}
+
+.achievedList li + li {
+  margin-top: 3px;
+}
+
+/* ── Personal projects ───────────────────────────────────── */
+.projectsSection {
+  padding-bottom: 4rem;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.6rem;
+  border-radius: 6px;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-dark);
+  box-shadow: 0 3px 0 #ddd;
+  text-decoration: none;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.projectCard:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 28, 56, 0.18);
+}
+
+.projectCard h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+}
+
+.projectCard p {
+  flex: 1;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.projectCta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.projectCard:hover .ctaArrow {
+  transform: translateX(5px);
+}
+
 /* ── Responsive ──────────────────────────────────────────── */
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2.5rem 1rem;
+  }
+  .projectsGrid {
+    grid-template-columns: 1fr;
   }
   .nameHeading {
     font-size: 2.8rem !important;

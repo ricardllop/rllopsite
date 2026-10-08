@@ -3,8 +3,8 @@ const dockerImageTag = process.env.DOCKER_IMAGE_TAG || 'latest';
 const urlvar = process.env.DOCUSAURUS_CONF_URL || 'http://localhost:80';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'RicardLlop',
-  tagline: 'Devops Engineer',
+  title: 'Ricard Llop',
+  tagline: 'Senior SRE - DevOps / Cloud Engineer',
   favicon: 'img/favicon.ico',
 
   // TO DO Set the production url of your site here
@@ -12,6 +12,11 @@ const config = {
   baseUrl: '/',
   organizationName: 'ricardllop',
   projectName: 'rllopsite',
+
+  // Shown in the terminal card of the homepage
+  customFields: {
+    imageTag: dockerImageTag,
+  },
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -50,14 +55,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/devops.png',
+      image: 'img/social-card.png',
       colorMode: {
+        defaultMode: 'dark',
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Me',
+        title: 'Ricard Llop',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Ricard Llop',
           src: 'img/sitelogo.png',
         },
         items: [
@@ -80,7 +86,6 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
         links: [
           {
             title: 'Docs',
@@ -122,11 +127,11 @@ const config = {
             ],
           },
         ],
-        copyright: `Docker Image Tag: ${dockerImageTag} - Copyright © ${new Date().getFullYear()} RLlopSite, Inc. Built with React.`,
+        copyright: `<span class="footer__build">image <b>rllopdev/rllopsite:${dockerImageTag}</b></span><span>Copyright © ${new Date().getFullYear()} RLlopSite, Inc. Built with React.</span>`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.nightOwlLight,
+        darkTheme: prismThemes.nightOwl,
       },
     }),
 };

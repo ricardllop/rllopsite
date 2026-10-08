@@ -1,0 +1,94 @@
+{
+  "home.actions.downloadCv": {
+    "message": "Descargar CV",
+    "description": "Button that downloads the designed PDF resume"
+  },
+  "home.actions.downloadPlain": {
+    "message": "Versión simple (para ATS)",
+    "description": "Link that downloads the plain, ATS-friendly PDF resume"
+  },
+  "home.certs.label": {
+    "message": "Certificaciones",
+    "description": "Accessible label of the certification badges list"
+  },
+  "home.pipeline.title": {
+    "message": "Cómo ha llegado aquí esta página",
+    "description": "Title of the pipeline card on the homepage"
+  },
+  "home.pipeline.status": {
+    "message": "En producción",
+    "description": "Status shown in the pipeline card once all steps have passed"
+  },
+  "home.pipeline.commit": {
+    "message": "Push a main en GitHub",
+    "description": "Pipeline step: commit"
+  },
+  "home.pipeline.build": {
+    "message": "GitHub Actions construye una imagen linux/arm64",
+    "description": "Pipeline step: build"
+  },
+  "home.pipeline.push": {
+    "message": "La imagen se publica en Docker Hub",
+    "description": "Pipeline step: push"
+  },
+  "home.pipeline.bump": {
+    "message": "El CI escribe el nuevo tag en el chart de Helm",
+    "description": "Pipeline step: bump"
+  },
+  "home.pipeline.sync": {
+    "message": "ArgoCD sincroniza el clúster desde Git",
+    "description": "Pipeline step: sync"
+  },
+  "home.pipeline.serve": {
+    "message": "Kubernetes en Oracle Cloud, dos nodos ARM, siempre gratuito",
+    "description": "Pipeline step: serve"
+  },
+  "home.pipeline.image": {
+    "message": "imagen",
+    "description": "Label of the container image currently deployed"
+  },
+  "home.pipeline.deployed": {
+    "message": "desplegada",
+    "description": "Label of how long ago the current image was deployed"
+  },
+  "home.pipeline.cta": {
+    "message": "Explorar la arquitectura",
+    "description": "Link from the pipeline card to the infrastructure doc"
+  },
+  "home.pipeline.replay": {
+    "message": "Repetir",
+    "description": "Button that replays the pipeline animation"
+  },
+  "home.pipeline.replayLabel": {
+    "message": "Repetir la animación del pipeline",
+    "description": "Accessible label of the replay button"
+  },
+  "home.strengths.title": {
+    "message": "Puntos fuertes",
+    "description": "Screen-reader title of the strengths section"
+  },
+  "home.experience.title": {
+    "message": "Experiencia",
+    "description": "Title of the experience section"
+  },
+  "home.experience.more": {
+    "message": "Más sobre este puesto",
+    "description": "Toggle that reveals the full description of a role"
+  },
+  "home.experience.achieved": {
+    "message": "Logros:",
+    "description": "Label above the full list of achievements of a role"
+  },
+  "home.projects.title": {
+    "message": "Proyectos personales",
+    "description": "Title of the personal projects section"
+  },
+  "home.projects.readMore": {
+    "message": "Leer más",
+    "description": "Call to action of a project card"
+  },
+  "home.contact.title": {
+    "message": "Hablemos",
+    "description": "Title of the closing contact section"
+  }
+}

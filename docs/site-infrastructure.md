@@ -10,13 +10,15 @@ I'm not primarily a frontend developer, so this website isn't the most impressiv
 
 What is perhaps more interesting is the **site's hosting and CI/CD pipeline setup**, though admittedly overkill for a static site. This was a practice project and a showcase of my skills. This document will explore this setup in detail.
 
-The setup includes an **always free Kubernetes cluster** using [Oracle Cloud](https://www.oracle.com/es/cloud/), **Containerization** of the website, **CI/CD using GitHub Actions**, **CD using [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)** and **Helm**. So keep reading if you are interested.
+The setup includes an **always free Kubernetes cluster** using [Oracle Cloud](https://www.oracle.com/es/cloud/), **Containerization** of the website, **CI/CD using GitHub Actions**, **CD using [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)** and **Helm**, public traffic through the **[Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/)** and private admin access over **[Tailscale](https://tailscale.com/)**. So keep reading if you are interested.
 
 ![Schema](/img/rllopsite-schema.png)
 
 ## The webpage
 
 The site's code is stored in this [Github repository](https://github.com/ricardllop/rllopsite), it is created using [Docusaurus](https://docusaurus.io/docs), a React-based static-site generator for fast, interactive sites, ideal for documentation, blogs, or personal projects.
+
+The build output is plain static files, served by an Nginx container with a small [configuration](https://github.com/ricardllop/rllopsite/blob/main/nginx/default.conf) for compression, cache headers and the 404 page.
 
 ## The Kubernetes cluster
 
@@ -29,15 +31,47 @@ The Terraform code is declaring all the necessary infrastructure resources on Or
 - 1 OKE (Oracle) Kubernetes cluster
 - 1 Node pool for the cluster. Formed by 2 instances of VM.Standard.A1.Flex 2 OCPUs and 12 GB each, making use of the limit [Always free compute of Oracle Cloud](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#compute).
 
-It also has a 2nd part to deploy [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) using Terraform. ArgoCD along with the [app of apps pattern](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern) are then used to deploy the rest of needed resources to the Kubernetes cluster.
+It also has a 2nd part to deploy [ArgoCD](https://argo-cd.readthedocs.io/en/stable/) using Terraform. ArgoCD along with the [app of apps pattern](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern) are then used to deploy the rest of needed resources to the Kubernetes cluster. The same Terraform code creates the secret that the Tailscale operator needs (more on that below).
 
 The [README.md](https://github.com/ricardllop/tf-oci-cluster-infra/blob/main/README.md) has much more detailed information on how to set it up if you want to replicate this.
 
 ## Helm charts & App of Apps
 
-Once the Kubernetes cluster is set, and ArgoCD is deployed using Terraform. Using ArgoCD and GitOps ([app of apps pattern](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern)) we can deploy anything else that is desired to the Kubernetes cluster. For now, using Helm I deployed the Helm charts stored in this [Github repository](https://github.com/ricardllop/argocd-app-of-apps).
+Once the Kubernetes cluster is set, and ArgoCD is deployed using Terraform. Using ArgoCD and GitOps ([app of apps pattern](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern)) we can deploy anything else that is desired to the Kubernetes cluster.
 
-For now I only have cert-manager & clusterissuer, ingress-nginx and my site as an nginx deployment Helm chart. More apps can simply be added to the [ArgoCD app of apps Github repository](https://github.com/ricardllop/argocd-app-of-apps/blob/main/values.yaml), and Argo will automatically sync and deploy any new app.
+The [app of apps Github repository](https://github.com/ricardllop/argocd-app-of-apps) is a Helm chart whose values are the list of ArgoCD Applications. Each Application points to one of the charts stored in the [Helm charts Github repository](https://github.com/ricardllop/oke-helm-charts). Right now these are the Applications:
+
+- **cert-manager** and a Let's Encrypt `ClusterIssuer`, for the TLS certificates.
+- **Gateway API CRDs**, taken directly from the upstream [gateway-api](https://github.com/kubernetes-sigs/gateway-api) repository.
+- **[kgateway](https://kgateway.dev/)**, the Gateway API implementation (based on Envoy), together with the public `Gateway`.
+- **Tailscale operator**, for private access to the cluster.
+- **This site**, an Nginx deployment with its own route and certificate.
+
+All of them sync automatically, with prune and self-heal, so the Git repositories are the only way anything changes in the cluster. More apps can simply be added to the [values.yaml of the app of apps](https://github.com/ricardllop/argocd-app-of-apps/blob/main/values.yaml), and Argo will automatically sync and deploy any new app.
+
+## Public traffic: Gateway API
+
+The site used to be exposed with ingress-nginx. It now uses the [Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/), the successor of the Ingress API, with [kgateway](https://kgateway.dev/) as the implementation. This is how a request reaches the site:
+
+1. The DNS records of `ricardllop.com` point to a reserved public IP in Oracle Cloud.
+2. That IP belongs to an Oracle Cloud Network Load Balancer, created automatically for the `LoadBalancer` Service that kgateway generates from the `Gateway` resource.
+3. The Envoy proxy of kgateway terminates TLS and matches the request against the `HTTPRoute` of the site.
+4. The route sends it to the Service of the Nginx deployment that serves the static files.
+
+There is one shared `Gateway` for the whole cluster, defined in the kgateway chart, and it only has a plain `http` listener. Everything that belongs to a hostname lives in the chart of the workload that owns it. The [chart of this site](https://github.com/ricardllop/oke-helm-charts/tree/main/rllopsite-chart) contains:
+
+- A `ListenerSet` that adds one `https` listener per hostname to the shared Gateway.
+- The cert-manager `Certificate` for those hostnames.
+- The `HTTPRoute` attached to that `ListenerSet`.
+- A second `HTTPRoute` that redirects http to https.
+
+This way a new workload brings its own hostnames and certificate without touching the Gateway.
+
+The certificates are issued by Let's Encrypt through cert-manager using the HTTP-01 challenge, which cert-manager solves by creating a temporary `HTTPRoute` on the `http` listener of the Gateway.
+
+## Private access: Tailscale
+
+ArgoCD has no public route. Its server is exposed only inside my [Tailscale](https://tailscale.com/) network through the [Tailscale Kubernetes operator](https://tailscale.com/kb/1236/kubernetes-operator), so the ArgoCD UI is reachable from my own devices and from nowhere else. The operator also runs a `Connector` that advertises the pod network as a subnet route and can be used as an exit node.
 
 ## Setting up the CI for the site
 
@@ -55,13 +89,15 @@ This GitHub Action workflow builds and pushes a Docker image to Docker Hub when 
 4. Creates a unique tag for the Docker image using the current date and time in the format `ga-YYYY.MM.DD-HHMM`
 5. Builds the Docker image for the `linux/arm64` platform. Pushes the built image to Docker Hub. Tags the image using the timestamp tag generated in the previous step
 
+The site itself is built in a Node stage that runs on the architecture of the GitHub runner, without emulation. Only the final Nginx image, which just copies the static files, is `linux/arm64`.
+
 With these steps, we have the CI configuration completed, and any commit to the main branch will trigger a new Docker image tag build that we could (if desired) deploy manually to the cluster. But we have gone further and set up a CD part.
 
 ## Setting up the CD for the site
 
 To achieve easy continuous deployment, apart from having ArgoCD on autosync configuration, there is an additional part on the GitHub Action workflow that is triggered on push to the `main` branch. Therefore, on each build and push to the Docker registry, the following actions will also execute:
 
-1. Checks out the Helm charts remote repository `helm-charts` directory `rllopsite-chart` to the local `rllopsite-chart` directory.
+1. Checks out the `rllopsite-chart` directory of the [Helm charts repository](https://github.com/ricardllop/oke-helm-charts).
 2. Uses yq, a command-line YAML processor, to update the image tag in the `rllopsite-chart/values.yaml` file with the new Docker image tag.
 3. Configures Git with a default username and email for committing changes.
 4. Commits the updated `values.yaml` file (with the new image tag) to the repository.

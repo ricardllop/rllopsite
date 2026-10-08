@@ -1,7 +1,7 @@
 {
   "name": "Ricard",
   "lastName": "Llop",
-  "title": "SRE - DEVOPS / CLOUD ENGINEER",
+  "title": "SENIOR SRE - DEVOPS / CLOUD ENGINEER",
   "careerStartYear": 2021,
   "contact": {
     "email": "ricardlloppalou@gmail.com",
@@ -9,12 +9,16 @@
     "github": "github.com/ricardllop",
     "website": "ricardllop.com"
   },
-  "skills": ["Kubernetes", "AWS", "Terraform", "Docker", "ArgoCD", "Jenkins", "GitLab CI", "Helm", "Python", "Bash"],
+  "location": "Barcelona, Spain (open to remote)",
+  "location_es": "Barcelona, España (abierto a remoto)",
+  "skills": ["Kubernetes", "AWS", "Terraform", "Terragrunt", "Docker", "Helm", "ArgoCD", "Jenkins", "GitLab CI", "Istio", "Vault", "Karpenter", "Atlantis", "Kafka", "Ansible", "Python", "Bash"],
+  "languages": ["Catalan (native)", "Spanish (native)", "English (C1)"],
+  "languages_es": ["Catalán (nativo)", "Español (nativo)", "Inglés (C1)"],
   "badges": [
     {
       "url": "https://www.credly.com/badges/2f3052e2-1aaa-4b3e-a57a-07175f0940a2",
       "image": "img/aws-devopsprofesional-badge.png",
-      "alt": "aws devops profesional badge",
+      "alt": "aws devops professional badge",
       "name": "AWS DevOps Professional"
     },
     {
@@ -40,6 +44,32 @@
     "Gran foco en CI/CD, con experiencia en diseño de pipelines Jenkins para builds de videojuegos Unity e imágenes Docker. Especializado en CD GitOps usando Helm y ArgoCD.",
     "Triple certificado (AWS DevOps Professional, CKAD, AWS Developer Associate) con experiencia multisectorial en: videojuegos, servicios financieros y consultoría cloud. Gran foco en fiabilidad, optimización de costes y velocidad de desarrollo."
   ],
+  "strengths": [
+    {
+      "title": "Platforms as code",
+      "title_es": "Plataformas como código",
+      "text": "AWS and Kubernetes platforms built with Terraform and Terragrunt, and operated by the developers themselves through Atlantis.",
+      "text_es": "Plataformas AWS y Kubernetes construidas con Terraform y Terragrunt, que los propios desarrolladores operan con Atlantis.",
+      "proof": "300+ microservices, 50+ teams",
+      "proof_es": "300+ microservicios, 50+ equipos"
+    },
+    {
+      "title": "CI/CD and GitOps",
+      "title_es": "CI/CD y GitOps",
+      "text": "Jenkins pipelines for Unity game builds and Docker images, delivered to Kubernetes with Helm and ArgoCD.",
+      "text_es": "Pipelines Jenkins para builds de videojuegos Unity e imágenes Docker, desplegadas en Kubernetes con Helm y ArgoCD.",
+      "proof": "70%+ faster CI builds",
+      "proof_es": "Builds de CI 70%+ más rápidas"
+    },
+    {
+      "title": "Cost and reliability",
+      "title_es": "Costes y fiabilidad",
+      "text": "Reliability, cost optimisation and developer velocity across gaming, financial services and cloud consulting.",
+      "text_es": "Fiabilidad, optimización de costes y velocidad de desarrollo en videojuegos, servicios financieros y consultoría cloud.",
+      "proof": "50% lower cloud bill",
+      "proof_es": "50% menos de factura cloud"
+    }
+  ],
   "profileImage": {
     "src": "img/sitelogo.png",
     "alt": "Photo of me (Ricard)"
@@ -47,28 +77,88 @@
   "learnMoreLink": {
     "url": "/docs/site-infrastructure"
   },
+  "projects": [
+    {
+      "title": "Free Oracle Cloud Kubernetes cluster & Personal website hosting and CI/CD",
+      "title_es": "Clúster Kubernetes gratuito en Oracle Cloud & CI/CD para web personal",
+      "description": "Personal portfolio site (Docusaurus/React) containerized and deployed on an always-free Oracle Cloud Kubernetes cluster. Infrastructure provisioned with Terraform, CI/CD via GitHub Actions, GitOps deployment through ArgoCD and Helm.",
+      "description_es": "Sitio personal (Docusaurus/React) contenedorizado y desplegado en un clúster Kubernetes siempre gratuito de Oracle Cloud. Infraestructura aprovisionada con Terraform, CI/CD mediante GitHub Actions, despliegue GitOps con ArgoCD y Helm.",
+      "link": "/docs/site-infrastructure"
+    },
+    {
+      "title": "Docker Compose Homelab",
+      "title_es": "Homelab con Docker Compose",
+      "description": "Self-hosted homelab on a mini PC managed with Docker Compose. Services include Immich (photo library), Jellyfin (media server), AdGuard Home (DNS & ad blocking), and Caddy as a reverse proxy with automatic TLS.",
+      "description_es": "Homelab autoalojado en un mini PC gestionado con Docker Compose. Servicios: Immich (biblioteca de fotos), Jellyfin (servidor multimedia), AdGuard Home (DNS y bloqueo de anuncios), y Caddy como proxy inverso con TLS automático.",
+      "link": "/blog/homelab"
+    }
+  ],
   "experiences": [
     {
       "type": "work",
       "date": "Nov. 2024 - Present Day",
       "date_es": "Nov. 2024 - Actualidad",
-      "title": "SRE - DevOps / Cloud Engineer",
+      "title": "Senior SRE - DevOps/Cloud Engineer",
       "subtitle": "Ubisoft Barcelona Mobile",
+      "summary": "Kubernetes platform on AWS, managed entirely as code, and the CI/CD ecosystem behind several mobile game teams.",
+      "summary_es": "Plataforma Kubernetes en AWS gestionada íntegramente como código, y el ecosistema de CI/CD de varios equipos de videojuegos móviles.",
+      "highlights": [
+        {
+          "lead": "50% lower cloud bill.",
+          "text": "Cluster Autoscaler to Karpenter, x86 to ARM64 Graviton, and on-demand to spot for stateless workloads."
+        },
+        {
+          "lead": "70%+ faster CI builds.",
+          "text": "Java dependency caching and Docker build layer caching."
+        },
+        {
+          "lead": "AI agent for platform engineering.",
+          "text": "Automates tooling upgrades (Jenkins, ArgoCD, GitLab), triages CI build errors and guides developers to the fix."
+        }
+      ],
+      "highlights_es": [
+        {
+          "lead": "50% menos de factura cloud.",
+          "text": "De Cluster Autoscaler a Karpenter, de x86 a ARM64 Graviton y de on-demand a spot en las cargas stateless."
+        },
+        {
+          "lead": "Builds de CI más de un 70% más rápidas.",
+          "text": "Caché de dependencias Java y de capas de Docker."
+        },
+        {
+          "lead": "Agente de IA de platform engineering.",
+          "text": "Automatiza actualizaciones de herramientas (Jenkins, ArgoCD, GitLab), clasifica errores de build de CI y guía a los desarrolladores hacia la solución."
+        }
+      ],
       "description": [
-        "Operate and evolve a Kubernetes-based cloud platform on AWS, fully managed through Infrastructure-as-Code, supporting multiple mobile game teams with a scalable, resilient, and self-service platform.",
-        "- Platform stack: Terraform, Terragrunt, AWS EKS, Istio, Vault + External Secrets, External DNS, Atlantis, Atlas MongoDB, Grafana Loki, Opentelemetry, Kafka",
+        "Operate and evolve a Kubernetes-based cloud platform on AWS, fully managed through Infrastructure-as-Code, supporting multiple mobile game teams.",
+        "- Platform stack: Terraform, Terragrunt, AWS EKS, Karpenter, Istio, Vault + External Secrets, External DNS, Atlantis, MongoDB Atlas, Grafana Loki, OpenTelemetry, Kafka",
         "Design, maintain, and improve the end-to-end CI/Build ecosystem for Unity Mobile game clients and backend Java container images.",
         "- CI stack: Jenkins, Unity build Mac agents (Ansible managed), BuildKit (Docker), Trivy, GitLab.",
         "Implement and maintain a GitOps-based CD ecosystem for server apps.",
         "- CD stack: ArgoCD, Helm, Kubernetes."
       ],
+      "achievements": [
+        "Cut the cloud bill by 50% by migrating Kubernetes workloads from Cluster Autoscaler to Karpenter, moving nodes and containers from x86 to ARM64 (AWS Graviton), and shifting stateless workloads from on-demand to spot instances.",
+        "Sped up CI builds by 70%+ with Java dependency caching and Docker build layer caching.",
+        "Built and deployed a platform-engineering AI agent that automates maintenance tasks such as tooling upgrades (Jenkins, ArgoCD, GitLab), triages CI build errors and guides developers to the solution.",
+        "Rolled out Atlantis across the organization so game teams provision their own infrastructure autonomously, and trained 3 game teams (5+ developers each) to use it.",
+        "Streamlined the management of the macOS fleet that serves as Jenkins agents for iOS game builds, automating it with Ansible."
+      ],
       "description_es": [
-        "Opero y evoluciono una plataforma cloud basada en Kubernetes en AWS, completamente gestionada mediante Infraestructura como Código, dando soporte a múltiples equipos de videojuegos móviles con una plataforma escalable, resiliente y de autoservicio.",
-        "- Platform stack: Terraform, Terragrunt, AWS EKS, Istio, Vault + External Secrets, External DNS, Atlantis, Atlas MongoDB, Grafana Loki, Opentelemetry, Kafka",
+        "Opero y evoluciono una plataforma cloud basada en Kubernetes en AWS, completamente gestionada mediante Infraestructura como Código, dando soporte a múltiples equipos de videojuegos móviles.",
+        "- Platform stack: Terraform, Terragrunt, AWS EKS, Karpenter, Istio, Vault + External Secrets, External DNS, Atlantis, MongoDB Atlas, Grafana Loki, OpenTelemetry, Kafka",
         "Diseño, mantenimiento y mejora del ecosistema CI/Build de extremo a extremo para clientes de videojuegos Unity Mobile e imágenes de contenedores Java backend.",
         "- CI stack: Jenkins, Unity build Mac agents (Ansible managed), BuildKit (Docker), Trivy, GitLab.",
         "Implementación y mantenimiento de un ecosistema CD basado en GitOps para aplicaciones de servidor.",
         "- CD stack: ArgoCD, Helm, Kubernetes."
+      ],
+      "achievements_es": [
+        "Reduje la factura cloud un 50% migrando las cargas de Kubernetes de Cluster Autoscaler a Karpenter, pasando nodos y contenedores de x86 a ARM64 (AWS Graviton) y moviendo las cargas stateless de instancias on-demand a spot.",
+        "Aceleré las builds de CI más de un 70% con caché de dependencias Java y de capas de Docker.",
+        "Desarrollé y desplegué un agente de IA de platform engineering que automatiza tareas de mantenimiento como las actualizaciones de herramientas (Jenkins, ArgoCD, GitLab), clasifica los errores de build de CI y guía a los desarrolladores hacia la solución.",
+        "Desplegué Atlantis en la organización para que los equipos de juego aprovisionen su propia infraestructura de forma autónoma, y formé en su uso a 3 equipos (5+ desarrolladores cada uno).",
+        "Simplifiqué la gestión de la flota de macOS que sirve de agentes Jenkins para las builds de juegos iOS, automatizándola con Ansible."
       ]
     },
     {
@@ -77,21 +167,59 @@
       "date_es": "Abr. 2023 - Nov. 2024",
       "title": "SRE - DevOps / Cloud Engineer",
       "subtitle": "Allianz Technology",
+      "summary": "Platform team of a self-service, everything-as-code AWS and Kubernetes platform: 300+ production microservices across 50+ development teams.",
+      "summary_es": "Equipo de plataforma de una plataforma AWS y Kubernetes de autoservicio y todo-como-código: más de 300 microservicios en producción de más de 50 equipos de desarrollo.",
+      "highlights": [
+        {
+          "lead": "PCI DSS compliant platform.",
+          "text": "Designed and delivered an isolated platform and CI/CD stack for payment services, and drove the full migration of those workloads."
+        },
+        {
+          "lead": "Certification achieved and maintained.",
+          "text": "Worked directly with PCI auditors on specific compliance requirements."
+        },
+        {
+          "lead": "Development teams trained.",
+          "text": "Guided the teams operating the services on platform adoption and compliance."
+        }
+      ],
+      "highlights_es": [
+        {
+          "lead": "Plataforma conforme con PCI DSS.",
+          "text": "Diseñé y entregué una plataforma y un stack de CI/CD aislados para servicios de pago, y lideré la migración completa de esas cargas."
+        },
+        {
+          "lead": "Certificación obtenida y mantenida.",
+          "text": "Trabajé directamente con auditores PCI en requisitos de cumplimiento específicos."
+        },
+        {
+          "lead": "Equipos de desarrollo formados.",
+          "text": "Orienté a los equipos que operaban los servicios en la adopción de la plataforma y el cumplimiento normativo."
+        }
+      ],
       "description": [
         "Member of the platform team responsible for a self-service, everything-as-code AWS/Kubernetes platform supporting 300+ production microservices across 50+ development teams, provisioned through modular Terraform and independently operated by devs with Atlantis.",
         "- Platform stack: Terraform, AWS EKS, Istio, Vault, Atlantis, AWS RDS, Kafka",
-        "Responsible of the CI/CD and build & release model for the applications delivered in the platform, applying code quality and DevSecOps best practices to ensure a secure and efficient software delivery process.",
-        "- CI stack: Jenkins, BuildKit (Docker), Trivy, Sonarqube, Github enterprise.",
-        "- CD stack: ArgoCD, Helm, Kubernetes, XLRelease",
-        "In addition to core platform responsibilities, designed and delivered an isolated PCI DSS compliant platform and CI/CD stack for payment-related services, driving the full migration of those workloads. Worked directly with PCI auditors and addressed specific compliance requirements to achieve and maintain certification. Provided training and guidance to the development teams operating the services to ensure correct platform adoption and compliance awareness."
+        "Responsible for the CI/CD and build & release model for the applications delivered in the platform, applying code quality and DevSecOps best practices to ensure a secure and efficient software delivery process.",
+        "- CI stack: Jenkins, BuildKit (Docker), Trivy, SonarQube, GitHub Enterprise.",
+        "- CD stack: ArgoCD, Helm, Kubernetes, XLRelease"
+      ],
+      "achievements": [
+        "Designed and delivered an isolated PCI DSS compliant platform and CI/CD stack for payment-related services, driving the full migration of those workloads.",
+        "Worked directly with PCI auditors and addressed specific compliance requirements to achieve and maintain certification.",
+        "Trained and guided the development teams operating the services to ensure correct platform adoption and compliance awareness."
       ],
       "description_es": [
         "Miembro del equipo de plataforma responsable de una plataforma AWS/Kubernetes de autoservicio y todo-como-código, dando soporte a más de 300 microservicios en producción de más de 50 equipos de desarrollo, aprovisionada mediante Terraform modular y operada de forma independiente con Atlantis.",
         "- Platform stack: Terraform, AWS EKS, Istio, Vault, Atlantis, AWS RDS, Kafka",
         "Responsable del modelo de CI/CD y build & release para las aplicaciones de la plataforma, aplicando buenas prácticas de calidad de código y DevSecOps para garantizar un proceso de entrega de software seguro y eficiente.",
-        "- CI stack: Jenkins, BuildKit (Docker), Trivy, Sonarqube, Github enterprise.",
-        "- CD stack: ArgoCD, Helm, Kubernetes, XLRelease",
-        "Además de las responsabilidades principales de plataforma, diseñé y entregué una plataforma y un stack de CI/CD aislados y conformes con PCI DSS para servicios de pago, liderando la migración completa de los servicios PCI de pago. Trabajé directamente con auditores PCI y abordé requisitos de cumplimiento específicos para obtener y mantener la certificación. Proporcioné formación y orientación a los equipos de desarrollo que operaban los servicios para garantizar una adopción correcta de la plataforma y conciencia sobre el cumplimiento normativo."
+        "- CI stack: Jenkins, BuildKit (Docker), Trivy, SonarQube, GitHub Enterprise.",
+        "- CD stack: ArgoCD, Helm, Kubernetes, XLRelease"
+      ],
+      "achievements_es": [
+        "Diseñé y entregué una plataforma y un stack de CI/CD aislados y conformes con PCI DSS para servicios de pago, liderando la migración completa de esos servicios.",
+        "Trabajé directamente con auditores PCI y abordé requisitos de cumplimiento específicos para obtener y mantener la certificación.",
+        "Formé y orienté a los equipos de desarrollo que operaban los servicios para garantizar una adopción correcta de la plataforma y conciencia sobre el cumplimiento normativo."
       ]
     },
     {
@@ -100,15 +228,46 @@
       "date_es": "Ene. 2021 - Abr. 2023",
       "title": "SRE - DevOps / Cloud Consultant",
       "subtitle": "Deloitte",
+      "summary": "Cloud infrastructure and CI/CD projects for different clients, mostly AWS with Terraform and Kubernetes on EKS.",
+      "summary_es": "Proyectos de infraestructura cloud y CI/CD para distintos clientes, sobre todo AWS con Terraform y Kubernetes en EKS.",
+      "highlights": [
+        {
+          "lead": "On-premise to AWS migrations.",
+          "text": "Moved client workloads to EC2 and containerized them onto EKS."
+        },
+        {
+          "lead": "Cost optimization projects.",
+          "text": "Delivered for already established AWS clients."
+        }
+      ],
+      "highlights_es": [
+        {
+          "lead": "Migraciones de on-premise a AWS.",
+          "text": "Cargas de clientes llevadas a EC2 y contenerizadas en EKS."
+        },
+        {
+          "lead": "Proyectos de optimización de costes.",
+          "text": "Para clientes ya establecidos en AWS."
+        }
+      ],
+      "stack": [
+        "- Stack: AWS, Terraform, AWS EKS, Jenkins, Helm, ArgoCD"
+      ],
       "description": [
-        "Cloud infrastructure projects for different clients, mainly centered in AWS using Terraform and with major focus on Kubernetes enviroments using AWS EKS.",
-        "Projects of CI/CD follwing GIT OPS. Mainly focusing on containerized environments using Jenkins / helm / ArgoCD.",
-        "Migrations to AWS cloud: on premise to EC2, on premise to containarization to EKS and cost optimization of already stablished clients."
+        "Cloud infrastructure projects for different clients, mainly centered in AWS using Terraform and with major focus on Kubernetes environments using AWS EKS.",
+        "CI/CD projects following GitOps, mainly focused on containerized environments using Jenkins / Helm / ArgoCD."
+      ],
+      "achievements": [
+        "Migrated client workloads from on-premise to AWS, both to EC2 and containerized onto EKS.",
+        "Delivered cost optimization projects for already established AWS clients."
       ],
       "description_es": [
         "Proyectos de infraestructura cloud para distintos clientes, principalmente centrados en AWS con Terraform y con gran foco en entornos Kubernetes usando AWS EKS.",
-        "Proyectos de CI/CD siguiendo GitOps, principalmente en entornos contenerizados con Jenkins, Helm y ArgoCD.",
-        "Migraciones a cloud AWS: on-premise a EC2, on-premise a contenedores en EKS, y optimización de costes para clientes ya establecidos."
+        "Proyectos de CI/CD siguiendo GitOps, principalmente en entornos contenerizados con Jenkins, Helm y ArgoCD."
+      ],
+      "achievements_es": [
+        "Migré cargas de clientes de on-premise a AWS, tanto a EC2 como a contenedores en EKS.",
+        "Realicé proyectos de optimización de costes en AWS para clientes ya establecidos."
       ]
     },
     {
@@ -118,17 +277,35 @@
       "title": "Junior Full stack Web Developer",
       "title_es": "Desarrollador Web Full Stack Junior",
       "subtitle": "BuyPower, Mataró",
+      "summary": "Full stack developer of an internal Source-to-Pay SaaS web application: microservices on AWS with an Angular frontend.",
+      "summary_es": "Desarrollador full stack de una aplicación web SaaS interna de Source-to-Pay: microservicios en AWS con frontend Angular.",
+      "highlights": [
+        {
+          "lead": "First CI/CD automation.",
+          "text": "Helped automate build and test with Jenkins pipelines, and deployments with bash scripts and Docker Compose on AWS EC2."
+        }
+      ],
+      "highlights_es": [
+        {
+          "lead": "Primera automatización de CI/CD.",
+          "text": "Colaboré en automatizar build y test con pipelines Jenkins, y los despliegues con scripts bash y Docker Compose en AWS EC2."
+        }
+      ],
       "description": [
-        "Full stack developer, Implementing a S2P (Supplier to Pay) SAS web application for the internal use of the company, with a microservices architecture deployed in AWS and a Angular frontend.",
-        "- Back-end: Java, Spring, iHibernate, MySQL",
-        "- Front-end: Angular, HTML, CSS, JS, Bootstrap",
-        "Helping in the CI/CD Build and Test automation with Jenkins pipelines, CD with bash scripts and Docker compose in AWS EC2 instances."
+        "Full stack developer, implementing an S2P (Source-to-Pay) SaaS web application for the internal use of the company, with a microservices architecture deployed in AWS and an Angular frontend.",
+        "- Back-end: Java, Spring, Hibernate, MySQL",
+        "- Front-end: Angular, HTML, CSS, JS, Bootstrap"
+      ],
+      "achievements": [
+        "Helped automate build and test with Jenkins pipelines, and deployments with bash scripts and Docker Compose on AWS EC2 instances."
       ],
       "description_es": [
-        "Desarrollador full stack, implementando una aplicación web SaaS de S2P (Supplier to Pay) para uso interno de la empresa, con arquitectura de microservicios desplegada en AWS y frontend Angular.",
-        "- Back-end: Java, Spring, iHibernate, MySQL",
-        "- Front-end: Angular, HTML, CSS, JS, Bootstrap",
-        "Colaboración en la automatización de build y test con pipelines Jenkins, CD con scripts bash y Docker Compose en instancias AWS EC2."
+        "Desarrollador full stack, implementando una aplicación web SaaS de S2P (Source-to-Pay) para uso interno de la empresa, con arquitectura de microservicios desplegada en AWS y frontend Angular.",
+        "- Back-end: Java, Spring, Hibernate, MySQL",
+        "- Front-end: Angular, HTML, CSS, JS, Bootstrap"
+      ],
+      "achievements_es": [
+        "Colaboré en la automatización de build y test con pipelines Jenkins, y de los despliegues con scripts bash y Docker Compose en instancias AWS EC2."
       ]
     },
     {

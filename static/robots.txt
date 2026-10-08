@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ricardllop.com/sitemap.xml
+Sitemap: https://ricardllop.com/es/sitemap.xml
