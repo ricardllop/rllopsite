@@ -12,7 +12,7 @@ What is perhaps more interesting is the **site's hosting and CI/CD pipeline setu
 
 The setup includes an **always free Kubernetes cluster** using [Oracle Cloud](https://www.oracle.com/es/cloud/), **Containerization** of the website, **CI/CD using GitHub Actions**, **CD using [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)** and **Helm**, public traffic through the **[Kubernetes Gateway API](https://gateway-api.sigs.k8s.io/)** and private admin access over **[Tailscale](https://tailscale.com/)**. So keep reading if you are interested.
 
-![Schema](/img/rllopsite-schema.png)
+![Schema](/img/rllopsite-schema.webp)
 
 ## The webpage
 

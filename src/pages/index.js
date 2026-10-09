@@ -94,14 +94,14 @@ function HomepageHeader({ locale }) {
             <div className={styles.badgesSection}>
               {profileData.badges.map((badge, index) => (
                 <a key={index} href={badge.url}>
-                  <img src={badge.image} alt={badge.alt} className="badgeimage" />
+                  <img src={badge.image} alt={badge.alt} className="badgeimage" width="150" height="150" />
                 </a>
               ))}
             </div>
           </div>
           <div className={clsx('col', 'profileimg-container', styles.heroImageCol)}>
             <div className={styles.profileImgWrapper}>
-              <img src={profileData.profileImage.src} alt={profileData.profileImage.alt} className="profileimg" />
+              <img src={profileData.profileImage.src} alt={profileData.profileImage.alt} className="profileimg" width="420" height="420" />
             </div>
             <ContactLinks />
             <button onClick={() => downloadResume(locale)} className={styles.resumeButton}>

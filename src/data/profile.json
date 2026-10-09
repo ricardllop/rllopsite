@@ -17,19 +17,19 @@
   "badges": [
     {
       "url": "https://www.credly.com/badges/2f3052e2-1aaa-4b3e-a57a-07175f0940a2",
-      "image": "img/aws-devopsprofesional-badge.png",
+      "image": "img/aws-devopsprofesional-badge.webp",
       "alt": "aws devops professional badge",
       "name": "AWS DevOps Professional"
     },
     {
       "url": "https://www.credly.com/badges/88399933-17d6-41e2-985c-828798f30f6f",
-      "image": "img/ckad-badge.png",
+      "image": "img/ckad-badge.webp",
       "alt": "ckad badge",
       "name": "Certified Kubernetes Application Developer"
     },
     {
       "url": "https://www.credly.com/badges/45eb9b34-fe37-45f8-9f45-0808b9de9cb9",
-      "image": "img/aws-developer-badge.png",
+      "image": "img/aws-developer-badge.webp",
       "alt": "aws developer associate badge",
       "name": "AWS Developer Associate"
     }
@@ -71,7 +71,7 @@
     }
   ],
   "profileImage": {
-    "src": "img/sitelogo.png",
+    "src": "img/sitelogo.webp",
     "alt": "Photo of me (Ricard)"
   },
   "learnMoreLink": {

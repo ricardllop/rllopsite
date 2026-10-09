@@ -12,7 +12,7 @@ Lo que quizás es más interesante es el **alojamiento del sitio y la configurac
 
 La configuración incluye un **clúster de Kubernetes siempre gratuito** en [Oracle Cloud](https://www.oracle.com/es/cloud/), **contenedorización** del sitio, **CI/CD con GitHub Actions**, **CD con [ArgoCD](https://argo-cd.readthedocs.io/en/stable/)** y **Helm**, tráfico público a través de la **[Gateway API de Kubernetes](https://gateway-api.sigs.k8s.io/)** y acceso privado de administración mediante **[Tailscale](https://tailscale.com/)**. ¡Sigue leyendo si te interesa!
 
-![Esquema](/img/rllopsite-schema.png)
+![Esquema](/img/rllopsite-schema.webp)
 
 ## El sitio web
 

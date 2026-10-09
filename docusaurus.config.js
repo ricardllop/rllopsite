@@ -64,7 +64,7 @@ const config = {
         title: 'Ricard Llop',
         logo: {
           alt: 'Ricard Llop',
-          src: 'img/sitelogo.png',
+          src: 'img/sitelogo.webp',
         },
         items: [
           {

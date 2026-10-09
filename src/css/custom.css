@@ -4,7 +4,14 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&display=swap');
+/* Self-hosted (latin subset, the only weight used): no third-party request blocking render */
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./barlow-condensed-800.woff2') format('woff2');
+}
 
 /* You can override the default Infima variables here. */
 :root {
