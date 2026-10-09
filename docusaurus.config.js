@@ -13,7 +13,7 @@ const config = {
   organizationName: 'ricardllop',
   projectName: 'rllopsite',
 
-  // Shown in the terminal card of the homepage
+  // Shown in the infrastructure card of the homepage
   customFields: {
     imageTag: dockerImageTag,
   },

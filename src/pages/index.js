@@ -23,8 +23,7 @@ const UI = {
     greeting: (name) => `Hello, I am ${name}`,
     downloadResume: 'Download Resume',
     downloadPlain: 'Plain version (ATS-friendly)',
-    terminalCmd: 'Click to view the infrastructure and CICD behind this site',
-    exploreArch: 'Explore the architecture',
+    infraLink: 'Infrastructure behind this site',
     experience: 'Experience',
     achieved: 'Achieved:',
     projects: 'Personal projects',
@@ -34,8 +33,7 @@ const UI = {
     greeting: (name) => `Hola, soy ${name}`,
     downloadResume: 'Descargar CV',
     downloadPlain: 'Versión simple (para ATS)',
-    terminalCmd: 'Ver la infraestructura y CI/CD detrás de este sitio',
-    exploreArch: 'Explorar la arquitectura',
+    infraLink: 'Infraestructura detrás de la web',
     experience: 'Experiencia',
     achieved: 'Logros:',
     projects: 'Proyectos personales',
@@ -115,52 +113,25 @@ function HomepageHeader({ locale }) {
             <button onClick={() => downloadResume(locale, { plain: true })} className={styles.plainResumeLink}>
               {ui.downloadPlain}
             </button>
-            <div>
-              <Link to={profileData.learnMoreLink.url} className={styles.terminalLink}>
-                <div className={styles.terminalArrowHint} aria-hidden="true">
-                  <span className={styles.terminalHintLabel}>EXPLORE</span>
-                  <span className={styles.cmdArrow}>▶</span>
-                </div>
-                <div className={styles.terminalCard}>
-                  <div className={styles.terminalBar}>
-                    <span className={styles.dot} />
-                    <span className={styles.dot} />
-                    <span className={styles.dot} />
-                    <span className={styles.terminalTitle}>rllopsite.infra</span>
-                    <span className={styles.liveTag}>
-                      <span className={styles.livePulse} />
-                      LIVE
-                    </span>
-                  </div>
-                  <div className={styles.terminalBody}>
-                    <div className={styles.cmdLine}>
-                      <span className={styles.cmdPrompt}>$</span>
-                      <span className={styles.cmd}>{ui.terminalCmd}</span>
-                    </div>
-                    <div className={styles.pipeline}>
-                      <span className={styles.stage}>BUILD ✓</span>
-                      <span className={styles.pipeArrow}>──▶</span>
-                      <span className={styles.stage}>PUSH ✓</span>
-                      <span className={styles.pipeArrow}>──▶</span>
-                      <span className={styles.stage}>DEPLOY ✓</span>
-                    </div>
-                    <div className={styles.deployedImage}>
-                      <span className={styles.deployedImageLabel}>image</span>
-                      rllopsite:{siteConfig.customFields.imageTag}
-                    </div>
-                    <div className={styles.techRow}>
-                      {['K8s', 'OCI', 'Terraform', 'ArgoCD', 'Docker'].map(t => (
-                        <span key={t} className={styles.techPill}>{t}</span>
-                      ))}
-                    </div>
-                    <div className={styles.cta}>
-                      {ui.exploreArch}
-                      <span className={styles.ctaArrow}>→</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
+            <Link to={profileData.learnMoreLink.url} className={styles.infraCard}>
+              <span className={styles.infraTitle}>
+                {ui.infraLink}
+                <span className={styles.infraArrow} aria-hidden="true">
+                  <svg viewBox="4 4 16 16">
+                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                  </svg>
+                </span>
+              </span>
+              <span className={styles.infraPipeline} aria-hidden="true">
+                {['Build', 'Push', 'Deploy'].map(stage => (
+                  <span key={stage} className={styles.infraStage}>{stage}</span>
+                ))}
+              </span>
+              <span className={styles.infraImage}>
+                <span className={styles.infraImageLabel}>image</span>
+                {' '}rllopsite:{siteConfig.customFields.imageTag}
+              </span>
+            </Link>
           </div>
         </div>
       </div>
